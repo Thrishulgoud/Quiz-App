@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="auth-container" id="auth-container">
+        <div class="auth-tabs">
+            <button class="auth-tab active" data-tab="login">Login</button>
+            <button class="auth-tab" data-tab="register">Register</button>
+        </div>
+        
+        <form id="login-form" class="auth-form">
+            <h2>Login</h2>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+
+        <form id="register-form" class="auth-form" style="display:none;">
+            <h2>Register</h2>
+            <input type="text" placeholder="Username" required>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <div class="container" style="display:none;">
+        <h1>Quiz App</h1>
+        <div id="start-screen">
+            <button id="start-btn">Start Quiz</button>
+        </div>
+        <div id="quiz-container" style="display: none;">
+            <div class="quiz-header">
+                <div id="progress">Question <span id="current-question">1</span> of <span id="total-questions">10</span></div>
+                <div id="timer">Time: <span id="time">120</span>s</div>
+            </div>
+            <div id="question">Question text will appear here</div>
+            <div id="options" class="options-container">
+                <!-- Options will be dynamically generated here -->
+            </div>
+            <button id="next-btn" disabled>Next Question</button>
+        </div>
+        <div id="result" style="display:none;">
+            <h2>Quiz Complete!</h2>
+            <p>Your Score: <span id="score">0</span>/<span id="total-score">10</span></p>
+            <p>Time Taken: <span id="time-taken">0</span> seconds</p>
+            <button id="restart-btn">Restart Quiz</button>
+        </div>
+    </div>
+
+    <audio id="correct-sound" preload="auto">
+        <source src="sounds/correct.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="wrong-sound" preload="auto">
+        <source src="sounds/wrong.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
